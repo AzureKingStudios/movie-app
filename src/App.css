@@ -31,3 +31,16 @@
     transform: rotate(360deg);
   }
 }
+
+.pop-movies {
+  display: flex;
+  overflow-x: scroll;
+  overflow-y: hidden;
+}
+
+.movie-preview {
+height: 350px;
+width: 240px;
+background-color: #61dafb;
+margin: 15px;
+}
