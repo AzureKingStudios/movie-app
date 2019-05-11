@@ -6,7 +6,8 @@ class MainPage extends Component {
 
     state = {
       popular: [],
-      upcoming: []
+      upcoming: [],
+      top_rated: []
     }
 
     getMovie = (movieID) => {
@@ -19,7 +20,7 @@ class MainPage extends Component {
         })
     }
 
-    getPopMovies = (category) => {
+    getMovies = (category) => {
         let url = `https://api.themoviedb.org/3/movie/${category}?api_key=${process.env.REACT_APP_TMDB_API_KEY}&language=en-US`;
 
         Axios.get(url).then((res) => {
@@ -30,22 +31,28 @@ class MainPage extends Component {
     }
 
     componentDidMount(){
-      this.getPopMovies('popular');
-      this.getPopMovies('upcoming');
+      this.getMovies('popular');
+      this.getMovies('upcoming');
+      this.getMovies('top_rated');
     }
     //todo: fix pop movies titles length
   render() {
     //the list of the popular movies
     const popMovies = this.state.popular.map((movie) =>
-      <MoviePreview key={movie.id} movie={movie}/>
+    <MoviePreview key={movie.id} movie={movie}/>
     );
     
+    //the list of the upcoming movies
     const upcomingMovies = this.state.upcoming.map((movie) =>
+      <MoviePreview key={movie.id} movie={movie}/>
+    );
+
+    //the list of the top rated movies
+    const topRatedMovies = this.state.top_rated.map((movie) =>
       <MoviePreview key={movie.id} movie={movie}/>
     );
     return(
       <div>
-        <h1>Main Page</h1>
         <h3>Popular Movies</h3>
         <div className='pop-movies'>
           {popMovies}
@@ -53,6 +60,10 @@ class MainPage extends Component {
         <h3>Upcoming Movies</h3>
         <div className='pop-movies'>
           {upcomingMovies}
+        </div>
+        <h3>Top Rated Movies</h3>
+        <div className='pop-movies'>
+          {topRatedMovies}
         </div>
       </div>
     )
