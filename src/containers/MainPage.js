@@ -5,7 +5,6 @@ import MoviePreview from './MoviePreview.js';
 class MainPage extends Component {
 
     state = {
-      movie: 'orange',
       popular: [],
       upcoming: []
     }
@@ -31,7 +30,6 @@ class MainPage extends Component {
     }
 
     componentDidMount(){
-      this.getMovie('124905');
       this.getPopMovies('popular');
       this.getPopMovies('upcoming');
     }
