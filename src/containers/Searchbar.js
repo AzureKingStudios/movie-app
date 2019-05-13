@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { Link } from 'react-router-dom';
 
 class Searchbar extends Component {
 
@@ -20,7 +21,9 @@ class Searchbar extends Component {
       <div>
         <form onSubmit={this.handleSubmit}>
           <input type="text" value={this.state.value} onChange={this.handleChange} />
-          <input type="submit" value="Submit" />
+          <Link to={`/search?${this.state.value}`}>
+            <input type="submit" value="Submit" />
+          </Link>
         </form>
       </div>
     )
