@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import Axios from 'axios';
 import MoviePreview from './MoviePreview.js';
+import Searchbar from './Searchbar.js';
 
 class MainPage extends Component {
 
@@ -53,6 +54,7 @@ class MainPage extends Component {
     );
     return(
       <div>
+        <Searchbar/>
         <h3>Popular Movies</h3>
         <div className='pop-movies'>
           {popMovies}
