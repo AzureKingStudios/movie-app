@@ -1,34 +1,40 @@
 import React, { Component } from 'react';
+import Searchbar from './Searchbar';
+import Header from './Header';
 import Axios from 'axios';
 
 class SearchPage extends Component {
 
     state = {
-        results: []
+        results: [],
+        query: ''
     }
 
-    componentDidMount() {
-        // const query = new URLSearchParams(this.props.location.search);
-        // const token = query.get('token')
-        // console.log(token)//123
+    getSearchResults = (qs) => {
+      let url = `https://api.themoviedb.org/3/search/movie?query=${qs}&api_key=${process.env.REACT_APP_TMDB_API_KEY}&language=en-US`;
+      //updated the state with the new query string and search results
+      Axios.get(url).then((res) => {
+          this.setState({
+            results: res.data.results,
+            query: qs
+          });
+      }).catch((error) => {
+          console.log('catch', error);
+      })
+    }
+      
+      render() {
         let qs = this.props.location.search;
         qs = qs.replace('?', '');
-        console.log(qs);
-
-        let url = `https://api.themoviedb.org/3/search/movie?query=${qs}&api_key=${process.env.REACT_APP_TMDB_API_KEY}&language=en-US`;
-
-        Axios.get(url).then((res) => {
-            this.setState({results: res.data.results});
-        }).catch((error) => {
-            console.log('catch', error);
-        })
-    }
-
-  render() {
-      console.log(this.state.results)
+        //checks to see if the query string has been updated
+        if(this.state.query !== qs) {
+          this.getSearchResults(qs);
+        }
     return(
       <div>
+        <Header/>
         <h1>Search Page</h1>
+        <Searchbar {...this.props}/>
       </div>
     )
   }

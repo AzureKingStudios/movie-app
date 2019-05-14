@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import { Link } from 'react-router-dom';
 
 class Searchbar extends Component {
 
@@ -12,7 +11,6 @@ class Searchbar extends Component {
   }
 
   handleSubmit = (event) => {
-      alert('A search was made ' + this.state.value);
       event.preventDefault();
       this.props.history.push(`/search?${this.state.value}`)
   }
