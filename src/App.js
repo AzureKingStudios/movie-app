@@ -3,6 +3,7 @@ import { Route } from 'react-router-dom';
 import './App.css';
 import Header from './containers/Header.js';
 import MainPage from './containers/MainPage.js';
+import SearchPage from './containers/SearchPage.js';
 
 function App() {
   return (
@@ -15,10 +16,8 @@ function App() {
         </div>
       )}/>
       {/* this route returns the search results for the movies*/}
-      <Route path='/search' render={() => (
-          <div>
-            search page called
-          </div>
+      <Route path='/search' render={(props) => (
+          <SearchPage {...props}/>
       )}/>
       {/*this route shows the movie details */}
       <Route path='/movie' render={() => (

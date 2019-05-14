@@ -20,7 +20,7 @@ class Searchbar extends Component {
     return(
       <div>
         <form onSubmit={this.handleSubmit}>
-          <input type="text" value={this.state.value} onChange={this.handleChange} />
+          <input type="text" value={this.state.value} onChange={this.handleChange} required />
           <Link to={`/search?${this.state.value}`}>
             <input type="submit" value="Submit" />
           </Link>
