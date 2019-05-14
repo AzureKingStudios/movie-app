@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import Searchbar from './Searchbar';
 import Header from './Header';
+import SearchResults from './SearchResults';
 import Axios from 'axios';
 
 class SearchPage extends Component {
@@ -35,6 +36,7 @@ class SearchPage extends Component {
         <Header/>
         <h1>Search Page</h1>
         <Searchbar {...this.props}/>
+        <SearchResults results={this.state.results}/>
       </div>
     )
   }

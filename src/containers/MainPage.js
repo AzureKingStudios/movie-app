@@ -36,7 +36,7 @@ class MainPage extends Component {
       this.getMovies('upcoming');
       this.getMovies('top_rated');
     }
-    //todo: fix pop movies titles length
+    
   render() {
     //the list of the popular movies
     const popMovies = this.state.popular.map((movie) =>
