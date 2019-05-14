@@ -36,7 +36,7 @@ class SearchPage extends Component {
         <Header/>
         <h1>Search Page</h1>
         <Searchbar {...this.props}/>
-        <SearchResults results={this.state.results}/>
+        <SearchResults {...this.props} results={this.state.results}/>
       </div>
     )
   }

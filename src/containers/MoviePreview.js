@@ -2,8 +2,14 @@ import React, { Component } from 'react';
 
 class MoviePreview extends Component {
 
+  handleClick = (movieID) => {
+      
+      console.log(movieID)
+      this.props.history.push(`/movie?${movieID}`)
+  }
 
   render() {
+
     
     if(this.props.movie) {
         let movieTitle = this.props.movie.title;
@@ -14,7 +20,7 @@ class MoviePreview extends Component {
         }
         let image = `https://image.tmdb.org/t/p/w500${this.props.movie.poster_path}`;
         return(
-            <div className='movie-preview'>
+            <div className='movie-preview' onClick={() => this.handleClick(this.props.movie.id)}>
                 <h4>{movieTitle}</h4>
                 <img src={image} alt={this.props.movie.title} height='75%'/>
             </div>

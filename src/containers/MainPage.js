@@ -31,17 +31,17 @@ class MainPage extends Component {
   render() {
     //the list of the popular movies
     const popMovies = this.state.popular.map((movie) =>
-    <MoviePreview key={movie.id} movie={movie}/>
+    <MoviePreview {...this.props} key={movie.id} movie={movie}/>
     );
     
     //the list of the upcoming movies
     const upcomingMovies = this.state.upcoming.map((movie) =>
-      <MoviePreview key={movie.id} movie={movie}/>
+      <MoviePreview {...this.props} key={movie.id} movie={movie}/>
     );
 
     //the list of the top rated movies
     const topRatedMovies = this.state.top_rated.map((movie) =>
-      <MoviePreview key={movie.id} movie={movie}/>
+      <MoviePreview {...this.props} key={movie.id} movie={movie}/>
     );
     return(
       <div>
