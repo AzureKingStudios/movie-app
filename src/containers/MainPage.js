@@ -36,7 +36,7 @@ class MainPage extends Component {
       this.getMovies('upcoming');
       this.getMovies('top_rated');
     }
-    //todo: fix pop movies titles length
+    
   render() {
     //the list of the popular movies
     const popMovies = this.state.popular.map((movie) =>
@@ -54,7 +54,7 @@ class MainPage extends Component {
     );
     return(
       <div>
-        <Searchbar/>
+        <Searchbar {...this.props}/>
         <h3>Popular Movies</h3>
         <div className='pop-movies'>
           {popMovies}
