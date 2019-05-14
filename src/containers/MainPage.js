@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import Axios from 'axios';
 import MoviePreview from './MoviePreview.js';
 import Searchbar from './Searchbar.js';
+import Header from './Header.js';
 
 class MainPage extends Component {
 
@@ -9,16 +10,6 @@ class MainPage extends Component {
       popular: [],
       upcoming: [],
       top_rated: []
-    }
-
-    getMovie = (movieID) => {
-        let url = `https://api.themoviedb.org/3/movie/${movieID}?api_key=${process.env.REACT_APP_TMDB_API_KEY}&language=en-US`;
-
-        Axios.get(url).then((res) => {
-            this.setState({movie: res.data});
-        }).catch((error) => {
-            console.log('catch', error);
-        })
     }
 
     getMovies = (category) => {
@@ -54,6 +45,7 @@ class MainPage extends Component {
     );
     return(
       <div>
+        <Header/>
         <Searchbar {...this.props}/>
         <h3>Popular Movies</h3>
         <div className='pop-movies'>
