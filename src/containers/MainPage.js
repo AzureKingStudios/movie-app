@@ -54,7 +54,7 @@ class MainPage extends Component {
     );
     return(
       <div>
-        <Searchbar/>
+        <Searchbar {...this.props}/>
         <h3>Popular Movies</h3>
         <div className='pop-movies'>
           {popMovies}

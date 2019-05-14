@@ -9,10 +9,10 @@ function App() {
   return (
     <div className="App">
       {/*this route is for the root of the site */}
-      <Route exact path='/' render={() => (
+      <Route exact path='/' render={(props) => (
         <div>
           <Header/>
-          <MainPage/>
+          <MainPage {...props}/>
         </div>
       )}/>
       {/* this route returns the search results for the movies*/}

@@ -14,6 +14,7 @@ class Searchbar extends Component {
   handleSubmit = (event) => {
       alert('A search was made ' + this.state.value);
       event.preventDefault();
+      this.props.history.push(`/search?${this.state.value}`)
   }
 
   render() {
@@ -21,9 +22,7 @@ class Searchbar extends Component {
       <div>
         <form onSubmit={this.handleSubmit}>
           <input type="text" value={this.state.value} onChange={this.handleChange} required />
-          <Link to={`/search?${this.state.value}`}>
             <input type="submit" value="Submit" />
-          </Link>
         </form>
       </div>
     )
