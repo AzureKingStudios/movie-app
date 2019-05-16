@@ -72,3 +72,17 @@ margin: 15px;
   background-color: red;
   overflow: auto;
 }
+
+.top-scroll-btn {
+  position: fixed;
+  bottom: 20px;
+  right: 30px;
+  z-index: 99;
+  padding:10px;
+  border-radius: 30px;
+  font-size: 18px;
+  border: none;
+  background-color: orangered;
+  color: white;
+  cursor: pointer;
+}
