@@ -5,7 +5,7 @@ class MoviePreview extends Component {
   handleClick = (movieID) => {
       
       console.log(movieID)
-      this.props.history.push(`/movie?${movieID}`)
+      this.props.history.push(`/movie/${movieID}`)
   }
 
   render() {

@@ -20,15 +20,14 @@ class MovieDetails extends Component {
     render() {
         
         let movie = this.state.movie;
-        console.log('movie',movie)
+
+        let movieID = this.props.match.params.id;
         
-        let qs = this.props.location.search;
-        qs = qs.replace('?', '');
-        //qs is parsed to an int so that movie id and qs can be compared
-        qs = parseInt(qs);
+        // movieID is parsed to an int so that movie id and qs can be compared
+        movieID = parseInt(movieID);
         //checks to see if the query string has been updated
-        if(movie.id !== qs) {
-            this.getMovie(qs);
+        if(movie.id !== movieID) {
+            this.getMovie(movieID);
         }
         
         if(typeof movie.id === 'undefined') {

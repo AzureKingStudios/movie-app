@@ -17,7 +17,7 @@ function App() {
           <SearchPage {...props}/>
       )}/>
       {/*this route shows the movie details */}
-      <Route path='/movie' render={(props) => (
+      <Route path='/movie/:id' render={(props) => (
           <MovieDetails {...props}/>
       )}/>
     </div>
