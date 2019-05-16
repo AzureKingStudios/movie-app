@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import Axios from 'axios';
 import MoviePreview from './MoviePreview.js';
 import Searchbar from './Searchbar.js';
+import ScrollTopButton from './ScrollTopButton';
 import Header from './Header.js';
 
 class MainPage extends Component {
@@ -59,6 +60,8 @@ class MainPage extends Component {
         <div className='pop-movies'>
           {topRatedMovies}
         </div>
+        {/* <button className='top-scroll-btn'>Top</button> */}
+        <ScrollTopButton/>
       </div>
     )
   }
