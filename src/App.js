@@ -9,17 +9,13 @@ function App() {
   return (
     <div className="App">
       {/*this route is for the root of the site */}
-      <Route exact path='/' render={(props) => (
-          <MainPage {...props}/>
-      )}/>
+      <Route exact path='/' component={MainPage}/>
       {/* this route returns the search results for the movies*/}
-      <Route path='/search' render={(props) => (
-          <SearchPage {...props}/>
-      )}/>
+      <Route path='/search' component={SearchPage}/>
       {/*this route shows the movie details */}
-      <Route path='/movie/:id' render={(props) => (
-          <MovieDetails {...props}/>
-      )}/>
+      <Route path='/movie/:id' component={MovieDetails}/>
+      {/* the wildcard path */}
+      <Route path='/*' render={() => <div>Took the wrong path</div>}/>
     </div>
   );
 }
