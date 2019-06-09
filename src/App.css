@@ -39,10 +39,13 @@
 }
 
 .movie-preview {
-height: 350px;
+height: 300px;
 width: 240px;
-background-color: #61dafb;
+background-color: black;
+color: white;
 margin: 15px;
+
+border-radius: 0px 25px 0px 0px;
 }
 
 .movie-results {
@@ -64,13 +67,17 @@ margin: 15px;
 .movie-detail-img {
   width: 50%;
   height: 100%;
+  border-radius: 20px;
 }
 
 .movie-info {
-  width: 50%;
-  height: 100%;
-  background-color: red;
+  border-radius: 20px;
+  width: calc(50% - 20px);
+  height: calc(100% - 20px);
+  background-color: black;
+  color: white;
   overflow: auto;
+  padding: 10px;
 }
 
 .top-scroll-btn {
@@ -85,4 +92,8 @@ margin: 15px;
   background-color: orangered;
   color: white;
   cursor: pointer;
+}
+
+.preview-title {
+  margin: 5px;
 }

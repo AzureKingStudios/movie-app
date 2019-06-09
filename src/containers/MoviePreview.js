@@ -21,8 +21,8 @@ class MoviePreview extends Component {
         let image = `https://image.tmdb.org/t/p/w500${this.props.movie.poster_path}`;
         return(
             <div className='movie-preview' onClick={() => this.handleClick(this.props.movie.id)}>
-                <h4>{movieTitle}</h4>
-                <img src={image} alt={this.props.movie.title} height='75%'/>
+                <h4 className='preview-title'>{movieTitle}</h4>
+                <img src={image} alt={this.props.movie.title} height='100%'/>
             </div>
         )
     }
